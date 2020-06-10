@@ -1,0 +1,5 @@
+FROM maven:3.5.2-jdk-8-alpine
+COPY ./  /home/docin/
+WORKDIR /home/docin
+RUN mvn package
+ENTRYPOINT ["java", "-jar", "target/inno-1.0-SNAPSHOT-jar-with-dependencies.jar"]
